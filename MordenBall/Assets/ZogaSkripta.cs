@@ -31,9 +31,12 @@ public class ZogaSkripta : MonoBehaviour {
 			
 			Vector2 mousePosition = Camera.main.ScreenToWorldPoint (touch.position);
 			Collider2D hitCollider = Physics2D.OverlapPoint (mousePosition);
-			if (hitCollider.transform.tag.Equals ("zoga")) {
+			if (hitCollider.transform.tag.Equals ("zoga") && touch.phase.Equals(TouchPhase.Began)) {
 				c.a = 1;
 				sprite.color = c;
+				smer = new Vector2 (Random.Range(-10000,10000),Random.Range(-10000,10000));
+				smer = smer.normalized;
+				smer = smer * hitrost;
 			}
 		}
 
