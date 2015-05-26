@@ -9,14 +9,17 @@ public class InputNavigacija : MonoBehaviour {
 	public Canvas canvas;
 
 
-
+	public static bool konecIgre;
 	void Start () {
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (konecIgre) {
+			konecIgre=false;
+			canvas.enabled=true;
+		}
 	}
 
 
